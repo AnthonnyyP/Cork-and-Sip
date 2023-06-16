@@ -2,28 +2,11 @@ from django.db import models
 
 # Create your models here.
 
-
-class WineTasting(models.Model):
-  name = models.CharField(max_length=30)
-  date = models.CharField(max_length=30)
-  time = models.DateTimeField()
-
-
-class Guest(models.Model):
-  user_name = models.Charfield(max_length=30)
-  user_email = models.EmailField(max_length=70, blank=True, unique=True)
-  user_phone = models.Charfield(max_length=10)
-
-  def __str__(self):
-    return self.user_name
-
-
-class Collection(models.Model):
-  wine_name = models.CharField(max_length=50)
-
-  def __str__(self):
-    return self.wine_name
-
+TASTINGS = (
+  ('M', 'Morning Tasting'),
+  ('A', 'Afternoon Tasting'),
+  ('N', 'Night Tasting'),
+)
 
 class Wine(models.Model):
   wine_name = models.CharField(max_length = 50)
@@ -32,3 +15,40 @@ class Wine(models.Model):
 
   def __str__(self):
     return self.wine_name
+
+class Guest(models.Model):
+  user_name = models.CharField(max_length=30)
+  user_email = models.EmailField(max_length=70, blank=True, unique=True)
+  user_phone = models.CharField(max_length=10)
+  wine = models.ManyToManyField(Wine)
+  user = models.ForeignKey(User, on_delete = CASCADE)
+  
+  def __str__(self):
+    return self.user_name
+
+class WineTasting(models.Model):
+  name = models.CharField(max_length=30)
+  date = models.DateField('Tasting Date')
+  time = models.CharField(
+    max_length = 1,
+    choices = TASTINGS,
+    default = TASTINGS[0][0]
+  )
+
+  cat = models.ForeignKey(Guest, on_delete = models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_tasting_display()} on {self.date}"
+
+  class Meta:
+    ordering = ['-date']
+
+class Collection(models.Model):
+  wine_name = models.CharField(max_length=50)
+  
+
+  def __str__(self):
+    return self.wine_name
+
+
+
