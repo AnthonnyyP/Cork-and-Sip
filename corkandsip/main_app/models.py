@@ -20,4 +20,6 @@ class Collection(models.Model):
 
 
 class Wine(models.Model):
-    wine_name = models.CharField(max_length=50)
+  wine_name = models.CharField(max_length = 50)
+  wine_age = models.CharField(max_length = 50)
+  wine_origin = models.CharField(max_length = 50) 
