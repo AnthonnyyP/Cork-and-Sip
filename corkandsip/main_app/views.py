@@ -15,7 +15,4 @@ def about(request):
 def guests_index(request):
     guests = Guest.objects.all()
     return render(request, 'guests/index.html',
-                  {
-                      'guests': guests
-                  }
-                  )
+    {'guests': guests})
