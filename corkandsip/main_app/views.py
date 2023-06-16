@@ -20,12 +20,8 @@ def about(request):
 def guests_index(request):
     guests = Guest.objects.filter(user=request.user)
     return render(request, 'guests/index.html',
-                  {
-                      'guests': guests
-                  }
-                  )
-
-
+    {'guests': guests})
+  
 def signup(request):
     error_message = ''
     if request.method == 'POST':
@@ -39,3 +35,4 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+

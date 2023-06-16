@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Wine Details</h1>
+
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ wine.name }}</span>
+        <p>Origin: {{ wine.origin }}</p>
+          <p>Age: {{ wine.age }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'wine_update' wine.id %}">Edit</a>
+        <a href="{% url 'wine_delete' wine.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
