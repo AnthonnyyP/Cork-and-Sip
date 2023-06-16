@@ -37,7 +37,7 @@ class WineTasting(models.Model):
     default = TASTINGS[0][0]
   )
 
-  cat = models.ForeignKey(Guest, on_delete = models.CASCADE)
+  guest = models.ForeignKey(Guest, on_delete = models.CASCADE)
 
 
 
