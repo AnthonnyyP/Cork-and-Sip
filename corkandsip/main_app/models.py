@@ -37,6 +37,7 @@ class WineTasting(models.Model):
 
   cat = models.ForeignKey(Guest, on_delete = models.CASCADE)
 
+
   def __str__(self):
     return f"{self.get_tasting_display()} on {self.date}"
 
