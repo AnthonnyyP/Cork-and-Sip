@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Wine List</h1>
+
+{% for wine in wine_list %}
+  <a href="{% url 'wine_detail' wine.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ wine.name }}</span>
+            <p>Age: {{ wine.age }}</p>
+            <p>Origin: {{ wine.origin }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
