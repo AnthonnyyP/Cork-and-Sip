@@ -4,10 +4,12 @@
 
 {% for guest in guests %}
 <div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ guest.user_name }}</span>
-    <p>Email: {{ guest.user_email }}</p>
-    <p>Phone Number: {{ guest.user_phone }}</p>
-  </div>
+  <a href="{% url 'detail' guest.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ guest.user_name }}</span>
+      <p>Email: {{ guest.user_email }}</p>
+      <p>Phone Number: {{ guest.user_phone }}</p>
+    </div>
+  </a>
 </div>
 {% endfor %} {% endblock %}
