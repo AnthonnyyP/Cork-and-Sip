@@ -15,7 +15,8 @@ urlpatterns = [
      #Tastings
      path('guests/<int:guest_id>/add_tasting', views.add_tasting, name = 'add_tasting'),
      #Wines
-     path('wines/', views.WinesList.as_view(), name = 'wines_index'),
+     path('wines/', views.WineList.as_view(), name = 'wines_index'),
+     path('wines/<int:pk>/', views.WineDetail.as_view(), name = 'wines_detail'),
      path('wines/create', views.WineCreate.as_view(), name = 'wines_create'),
      path('wines/<int:pk>/update/', views.WineUpdate.as_view(), name = 'wines_update'),
      path('wines/<int:pk>/delete/', views.WineDelete.as_view(), name = 'wines_delete'), 

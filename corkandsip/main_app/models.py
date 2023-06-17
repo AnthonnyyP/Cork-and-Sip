@@ -37,7 +37,7 @@ class Guest(models.Model):
         return reverse('detail', kwargs={'guest_id': self.id})
 
 
-class WineTasting(models.Model):
+class Tasting(models.Model):
     name = models.CharField(max_length=30)
     date = models.DateField('Tasting Date')
     time = models.CharField(
