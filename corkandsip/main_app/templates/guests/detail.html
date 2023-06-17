@@ -9,6 +9,11 @@
     <p>Email: {{ guest.user_email }}</p>
     <p>Phone Number: {{ guest.user_phone }}</p>
   </div>
+  <div class="card-action">
+    <a href="{% url 'guests_update' guest.id %}">Edit</a>
+    <a href="{% url 'guests_delete' guest.id %}">Delete</a>
+  </div>
+
 </div>
 
 {% endblock %}
