@@ -93,8 +93,11 @@ class WineDelete(LoginRequiredMixin, DeleteView):
     success_url = '/wines'
 
 @login_required
-def add_to_cellar():
-    pass
+def add_to_cellar(request, guest_id, wine_id):
+    Guest.objects.get(id = guest_id).wines.add(wine_id)
+    return redirect('detail', guest_id = guest_id)
+    
 @login_required
-def remove_from_cellar():
-    pass
+def remove_from_cellar(request, guest_id, wine_id):
+    Guest.objects.get(id = guest_id).wines.remove(wine_id)
+    return redirect('detail', guest_id = guest_id)
