@@ -21,14 +21,12 @@ def about(request):
 def guests_index(request):
     guests = Guest.objects.filter(user=request.user)
     return render(request, 'guests/index.html',
-                  {'guests': guests})
-
+    {'guests': guests})
 
 @login_required
 def guests_detail(request, guest_id):
     guest = Guest.objects.get(id=guest_id)
     return render(request, 'guests/detail.html', {'guest': guest})
-
 
 def signup(request):
     error_message = ''

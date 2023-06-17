@@ -20,6 +20,8 @@ class Wine(models.Model):
     def __str__(self):
         return self.wine_name
 
+    def get_absolute_url(self):
+        return reverse('wines_detail', kwargs={'pk': self.id})
 
 class Guest(models.Model):
     user_name = models.CharField(max_length=30)
