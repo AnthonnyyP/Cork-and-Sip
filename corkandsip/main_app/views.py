@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
+#CRUD Views
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .models import Guest
+#User Creation & Sign Up
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Guest, Wine
+from .forms import TastingForm
 
 # Create your views here.
 
@@ -96,7 +100,7 @@ class WineDelete(LoginRequiredMixin, DeleteView):
 def add_to_cellar(request, guest_id, wine_id):
     Guest.objects.get(id = guest_id).wines.add(wine_id)
     return redirect('detail', guest_id = guest_id)
-    
+
 @login_required
 def remove_from_cellar(request, guest_id, wine_id):
     Guest.objects.get(id = guest_id).wines.remove(wine_id)
