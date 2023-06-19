@@ -2,7 +2,6 @@
 {% block content %}
 
 <h1>Guest Details</h1>
-
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ guest.user_name }}</span>
@@ -14,15 +13,91 @@
     <a href="{% url 'guests_delete' guest.id %}">Delete</a>
   </div>
 </div>
-<h2>Wine List</h2>
+
+<!-- Add a Tasting Section -->
+<div class="col s6">
+  <form action="{% url 'add_tasting' guest.id %}" method="POST">
+    {% csrf_token %}
+    <!-- Render the inputs -->
+    {{ tasting_form.as_p }}
+    <input type="submit" class="btn" value="Add a Tasting">
+  </form>
+  <br>
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Tasting</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{tasting.date}}</td>
+          <td>{{tasting.get_meal_display}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
 <div class="row">
-  <div class="col s6 col-offset-3">
+  <div class="col s6">
+    <h3>{{ guest.user_name }}'s Cellar</h3>
+    {% if guest.wines.count %} {% for wine in guest.wines.all %}
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ wine.wine_name }}</span>
-        <p>Origin: {{ wine.wine_origin }}</p>
-          <p>Age: {{ wine.wine_age }}</p>
+        <span class="card-title">
+          {{ wine.wine_name }}
+          {{ wine.wine_age }}
+          {{ wine.wine_origin }}
+        </span>
       </div>
+      <div class="card-action">
+        <form action="{% url 'remove_from_cellar' guest.id wine.id%}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn">Remove</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %} 
+    {% else %}
+    <h5>No Wines Added</h5>
+    {% endif %}
+  </div>
+</div>
+<div class="col s6">
+  <h3>Available Wines</h3>
+  {% if wines.count %}
+    {% for wine in wines.all %}
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">
+            {{ wine.wine_name }}
+          </span>
+          <p>Age: {{ wine.wine_age }} Years</p>
+          <p>Origin: {{ wine.wine_origin }}</p>
+        </div>
+        <div class="card-action">
+          <form action="{% url 'add_to_cellar' guest.id wine.id%}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">Add</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <h5>{{guest.name}} Already Has All Wines Available</h5>
+  {% endif %}
+</div>
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
 
-
+  const selectEl = document.getElementById('id_time');
+  M.FormSelect.init(selectEl);
+</script>
 {% endblock %}
