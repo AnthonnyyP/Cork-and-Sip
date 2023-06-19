@@ -24,7 +24,7 @@
         </span>
       </div>
       <div class ="card-action">
-        <form action="{% url 'unassoc_wine.wine' guest.user_id wine.wine.id %}" method="POST">
+        <form action="{% url 'unassoc_wine.wine_name' guest.user_id wine.wine.id %}" method="POST">
           {% csrf_token %}
           <button type="submit"
           class="btn">Remove</button>
@@ -42,7 +42,7 @@
 <h3>Wine Cellar</h3>
 {% if wines.wine.count %} {% for wine in wines.wine.all %}
 <div class="card-action">
-  <form action="{% url 'assoc_wine' guest.user.id %}" method="POST">
+  <form action="{% url 'assoc_wine.wine_name' guest.user.id %}" method="POST">
     % csrf_token %<button type="submit" class="btn">Add</button>button>
     </form>
     </div>
