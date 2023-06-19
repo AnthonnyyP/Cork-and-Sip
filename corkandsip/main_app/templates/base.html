@@ -13,15 +13,14 @@
   <!-- <link rel="stylesheet" href="css/materialize.min.css"> -->
   <!-- <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css”> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" />
 </head>
 <body>
-  <header class="navbar-fixed">
     <ul id="guestdropdown" class="dropdown-content">
     <li><a href="{% url 'guests_create' %}">Add a Guest</a></li>
+    <li class="divider"></li>
     <li><a href="{% url 'index' %}">View All Guests</a></li>
     </ul>
     <nav>
@@ -30,7 +29,6 @@
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp; Cork & Sip</a></li>
         </ul>
         <ul class="right">
-          <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'wines_create' %}">Add a Wine</a></li>
@@ -42,7 +40,6 @@
           {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
-
           {% endif %}
         </ul>
       </div>
