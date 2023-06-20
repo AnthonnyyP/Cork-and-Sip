@@ -7,9 +7,9 @@
   <div class="col s6 col-offset-3">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ wine.wine_name }}</span>
-        <p>Origin: {{ wine.wine_origin }}</p>
-          <p>Age: {{ wine.wine_age }}</p>
+        <span class="card-title">{{ wine.producer }}</span>
+        <p>Region: {{ wine.region }}</p>
+          <p>Vintage: {{ wine.vintage }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'wines_update' wine.id %}">Edit</a>

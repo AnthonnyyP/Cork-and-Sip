@@ -7,9 +7,9 @@
   <a href="{% url 'wines_detail' wine.id %}">
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ wine.wine_name }}</span>
-            <p>Age: {{ wine.wine_age }}</p>
-            <p>Origin: {{ wine.wine_origin }}</p>
+            <span class="card-title">{{ wine.producer }}</span>
+            <p>Vintage: {{ wine.vintage }}</p>
+            <p>Region: {{ wine.region }}</p>
         </div>
     </div>
   </a>

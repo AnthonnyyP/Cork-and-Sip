@@ -61,7 +61,7 @@ def signup(request):
 
 class GuestCreate(LoginRequiredMixin, CreateView):
     model = Guest
-    fields = ['user_name', 'user_email', 'user_phone']
+    fields = ['username', 'user_Email', 'user_Phone']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -70,7 +70,7 @@ class GuestCreate(LoginRequiredMixin, CreateView):
 
 class GuestUpdate(LoginRequiredMixin, UpdateView):
     model = Guest
-    fields = ['user_email', 'user_phone']
+    fields = ['user_Email', 'user_Phone']
 
 
 class GuestDelete(LoginRequiredMixin, DeleteView):
