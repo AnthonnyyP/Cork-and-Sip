@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from datetime import date
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -35,6 +35,9 @@ class Guest(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'guest_id': self.id})
+
+    def tasting_for_today(self):
+        return self.tasting_set.filter(date=date.today()).count() >= len(TASTINGS)
 
 
 class Tasting(models.Model):
