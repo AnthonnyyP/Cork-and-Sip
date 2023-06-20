@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
     <ul id="guestdropdown" class="dropdown-content">
@@ -52,6 +53,18 @@
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2023 Cork & Sip &nbsp;</div>
   </footer>
+  <script>
+    const dateEl = document.getElementById('id_date');
+    M.Datepicker.init(dateEl, {
+      format: 'yyyy-mm-dd',
+      defaultDate: new Date(),
+      setDefaultDate: true,
+      autoClose: true
+    });
+  
+    const selectEl = document.getElementById('id_time');
+    M.FormSelect.init(selectEl);
+  </script>
   <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
   <!-- <script src="js/materialize.min.js"></script> -->
   <!-- <script src=”https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js”></script> -->
