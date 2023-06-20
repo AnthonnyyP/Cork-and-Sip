@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from datetime import date
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -22,6 +22,7 @@ class Wine(models.Model):
 
     def get_absolute_url(self):
         return reverse('wines_detail', kwargs={'pk': self.id})
+
 
 class Guest(models.Model):
     user_name = models.CharField(max_length=30)

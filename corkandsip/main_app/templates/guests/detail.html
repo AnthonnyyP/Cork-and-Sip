@@ -26,15 +26,17 @@
   <table class="striped">
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Tasting</th>
+        <th>Date:</th>
+        <th>Tasting:</th>
       </tr>
     </thead>
     <tbody>
+      {% for tasting in guest.tasting_set.all %}
         <tr>
           <td>{{tasting.date}}</td>
-          <td>{{tasting.get_meal_display}}</td>
+          <td>{{tasting.get_time_display}}</td>
         </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
@@ -42,14 +44,14 @@
 <div class="row">
   <div class="col s6">
     <h3>{{ guest.user_name }}'s Cellar</h3>
-    {% if guest.wines.count %} {% for wine in guest.wines.all %}
+    {% if guest.wine.count %} {% for wine in guest.wine.all %}
     <div class="card">
       <div class="card-content">
         <span class="card-title">
           {{ wine.wine_name }}
-          {{ wine.wine_age }}
-          {{ wine.wine_origin }}
         </span>
+        <p>Age: {{ wine.wine_age }} Years</p>
+        <p>Origin: {{ wine.wine_origin }}</p>
       </div>
       <div class="card-action">
         <form action="{% url 'remove_from_cellar' guest.id wine.id%}" method="POST">
