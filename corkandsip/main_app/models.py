@@ -13,25 +13,26 @@ TASTINGS = (
 
 
 class Wine(models.Model):
-    wine_name = models.CharField(max_length=50)
-    wine_age = models.CharField(max_length=50)
-    wine_origin = models.CharField(max_length=50)
+    producer = models.CharField(max_length=50)
+    vintage = models.CharField(max_length=50)
+    region = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.wine_name
+        return self.producer
 
     def get_absolute_url(self):
         return reverse('wines_detail', kwargs={'pk': self.id})
 
+
 class Guest(models.Model):
-    user_name = models.CharField(max_length=30)
-    user_email = models.EmailField(max_length=70, blank=True, unique=True)
-    user_phone = models.CharField(max_length=10)
+    username = models.CharField(max_length=30)
+    user_Email = models.EmailField(max_length=70, blank=True, unique=True)
+    user_Phone = models.CharField(max_length=10)
     wine = models.ManyToManyField(Wine)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user_name
+        return self.username
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'guest_id': self.id})
@@ -59,7 +60,7 @@ class Tasting(models.Model):
 
 
 class Collection(models.Model):
-    wine_name = models.CharField(max_length=50)
+    producer = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.wine_name
+        return self.producer
