@@ -1,8 +1,10 @@
+import uuid
+import boto3
+import os
 from django.shortcuts import render, redirect
 # CRUD Views
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Guest
 # User Creation & Sign Up
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
