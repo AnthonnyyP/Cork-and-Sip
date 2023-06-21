@@ -20,13 +20,6 @@ form {
   align-items: center;
 }
 
-th { 
-  display:flex;
-  width: 100%;
-  background-color: #880e4f ;
-  justify-content: center;
-}
-
 label {
   color: white;
 }
@@ -40,24 +33,18 @@ input {
   width: 100% !important;
 }
 
-td {
-  border-radius: 5px;
-}
-
 input:focus {
   border-bottom: 1px solid orange !important;
   box-shadow: none !important;
 }
 
-tr {
-  display:flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: whitesmoke;
+td {
+  background-color: white;
 }
-
+th {
+  background-color: #880e4f;
+  text-align: center;
+}
 tbody {
   background-color: rgba(0,0,0,0.0)!important;
 }
@@ -67,10 +54,59 @@ tbody {
 }
 
 .btn:hover {
-  background-color: orange !important;
-  
+  background-color: #EAAA00 !important;
 }
 
 #vineyard {
   border-radius: 10px;
+}
+
+.datepicker-date-display {
+  background-color: #880e4f;
+}
+
+abbr {
+  color: white !important;
+}
+
+#date-tasting-header {
+  color: white;
+  background-color: #880e4f;
+  text-align: center;
+}
+
+#home-header {
+  font-family: 'Parisienne', cursive;
+  text-align: center;
+}
+
+#home-img {
+  border: 10px dotted black;
+  border-style: double;
+}
+
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-position: center center;
+  opacity: .95;
+  top: 100px;
+  height: 40vh;
+}
+
+#banner-heading { 
+  display: flex;
+  font-family: 'Bebas Neue', sans-serif;
+  word-spacing: 5px;
+  letter-spacing: 5px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background-color: rgba(0,0,0,0.6);
+  height: 60px;
+}
+
+h5 {
+  font-family: 'Bebas Neue', sans-serif;
 }
