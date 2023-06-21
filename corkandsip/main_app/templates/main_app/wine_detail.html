@@ -7,14 +7,17 @@
   <div class="col s6 col-offset-3">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ wine.wine_name }}</span>
-        <p>Origin: {{ wine.wine_origin }}</p>
-          <p>Age: {{ wine.wine_age }}</p>
+        <span class="card-title">{{ wine.producer }}</span>
+        <p>Region: {{ wine.region }}</p>
+          <p>Vintage: {{ wine.vintage }}</p>
       </div>
       <div class="card-action">
         <a href="{% url 'wines_update' wine.id %}">Edit</a>
         <a href="{% url 'wines_delete' wine.id %}">Delete</a>
       </div>
+    </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11948175.05338434!2d-8.863193367490476!3d45.465632896552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1687317195557!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   {% endblock %}
