@@ -7,8 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cork & Sip</title>
+  <!--GOOGLE FONTS BELOW-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Just+Another+Hand&family=Parisienne&family=Rochester&display=swap" rel="stylesheet">
+  <!--GOOGLE FONTS ABOVE-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" />
@@ -49,9 +53,9 @@
         </ul>
       </div>
     </nav>
-    <nav style="background-image: url('https://media.istockphoto.com/id/486402460/photo/wine-corks-background.jpg?s=612x612&w=is&k=20&c=E6vAcBIzqatT-YRNLmOdsWF403eHYP8QhWC0CxUwj6I=');">
-      <div  >Cork and Sip</div>
-    </nav>
+    <div class="banner">
+      <h2 id = "banner-heading">Welcome to Cork & Sip</h2>
+    </div>
   </header>
   <main class="container">
     {% block content %}

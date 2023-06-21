@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Wine List</h1>
+<h1 class="card-content valign center">Wine List</h1>
 
 {% for wine in wine_list %}
   <a href="{% url 'wines_detail' wine.id %}">
