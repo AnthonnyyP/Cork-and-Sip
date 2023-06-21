@@ -8,22 +8,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Cork & Sip</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-  <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- <link rel="stylesheet" href="css/materialize.min.css"> -->
-  <!-- <link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css”> -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <ul id="guestdropdown" class="dropdown-content">
+  <ul id="dropdown1" class="dropdown-content">
     <li><a href="{% url 'guests_create' %}">Add a Guest</a></li>
     <li class="divider"></li>
     <li><a href="{% url 'index' %}">View All Guests</a></li>
     </ul>
+    <ul id="dropdown2" class="dropdown-content">
+      <li><a href="{% url 'wines_create' %}">Add a Guest</a></li>
+      <li class="divider"></li>
+      <li><a href="{% url 'wines_index' %}">View All Guests</a></li>
+      </ul>
     <nav>
       <div class="nav-wrapper pink darken-4">
         <ul>
@@ -32,12 +35,10 @@
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'wines_create' %}">Add a Wine</a></li>
-            <li><a href="{% url 'wines_index'%}">View All Wine</a></li>
-            <li><a href="{% url 'guests_create' %}">Add a Guest</a></li>
-            <li><a href="{% url 'index' %}">View All Guests</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" >Guests<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2" >Wines<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="guestdropdown">Guests<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
           {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
@@ -54,6 +55,7 @@
     <div class="right">All Rights Reserved, &copy; 2023 Cork & Sip &nbsp;</div>
   </footer>
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
     const dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
       format: 'yyyy-mm-dd',
@@ -64,17 +66,11 @@
   
     const selectEl = document.getElementById('id_time');
     M.FormSelect.init(selectEl);
-  </script>
-  <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-  <!-- <script src="js/materialize.min.js"></script> -->
-  <!-- <script src=”https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js”></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
   });
-</script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems); 
+  });
+  </script>
 </body>
 </html>
