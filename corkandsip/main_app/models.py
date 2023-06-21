@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 TASTINGS = (
-    ('M', 'Morning Tasting'),
-    ('A', 'Afternoon Tasting'),
-    ('N', 'Night Tasting'),
+    ('M', '11:30 AM'),
+    ('A', '2:00 PM'),
+    ('N', '6:00 PM'),
 )
 
 
