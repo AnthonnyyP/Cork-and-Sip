@@ -16,11 +16,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+  
+<body style="font-family: 'Courier New', Courier, monospace; background-image: url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80');" >
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="{% url 'guests_create' %}">Add a Guest</a></li>
     <li class="divider"></li>
     <li><a href="{% url 'index' %}">View All Guests</a></li>
+
+
     </ul>
     <ul id="dropdown2" class="dropdown-content">
       <li><a href="{% url 'wines_create' %}">Add a Guest</a></li>
@@ -45,6 +48,9 @@
           {% endif %}
         </ul>
       </div>
+    </nav>
+    <nav style="background-image: url('https://media.istockphoto.com/id/486402460/photo/wine-corks-background.jpg?s=612x612&w=is&k=20&c=E6vAcBIzqatT-YRNLmOdsWF403eHYP8QhWC0CxUwj6I=');">
+      <div></div>
     </nav>
   </header>
   <main class="container">
