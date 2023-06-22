@@ -48,32 +48,10 @@
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
           <li><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
-      </ul>
-    <nav>
-      <div class="nav-wrapper pink darken-4">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp; Cork & Sip</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
-          {% if user.is_authenticated %}
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" >Guests<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2" >Wines<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
-            </ul>
-          {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+  </nav>
     <div class="banner">
     </div>
   </nav>
-  <div class="banner">
-    <h2 id = "banner-heading">Welcome to Cork & Sip</h2>
-  </div>
   </header>
   <main class="container">
     {% block content %}
