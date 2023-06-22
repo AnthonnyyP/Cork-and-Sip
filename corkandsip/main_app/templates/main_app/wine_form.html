@@ -5,20 +5,17 @@
 {% if object %}
 <h1>Edit <span class="teal-text">{{ object.name}}</span></h1>
 {% else %}
-<h1>Add Wine</h1>
+<h1 class = "card-content valign center">Add Wine</h1>
 {% endif %}
 
-
-
 <form action="" method="POST">
-
   {% csrf_token %}
   <table>
-
     {{ form.as_table }}
   </table>
+  <br>
   <input type="submit" value = "Submit!" class="btn">
-
-  </form>
+</form>
+<br>
 
 {% endblock %}
