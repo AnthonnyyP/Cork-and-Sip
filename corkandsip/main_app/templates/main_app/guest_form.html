@@ -5,6 +5,7 @@
     <h1>Edit <span class="teal-text">{{ object.user_name }}</span></h1>
   {% else %}
     <h1 class = "card-content valign center">Add Guest</h1>
+    <p class = "card-content valign center">Want to bring friends and family? Make sure you add them to your reservation!</p>
   {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
