@@ -13,6 +13,100 @@ footer.page-footer {
   text-align: right;
 }
 
+form {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  color: white;
+}
+
+input { 
+  background-color: #880e4f;
+}
+
+#id_producer {
+  
+  width: 100% !important;
+}
+
+input:focus {
+  border-bottom: 1px solid orange !important;
+  box-shadow: none !important;
+}
+
+td {
+  background-color: white;
+}
+th {
+  background-color: #880e4f;
+  text-align: center;
+}
+tbody {
+  background-color: rgba(0,0,0,0.0)!important;
+}
+
+.btn {
+  background-color: #880e4f;
+}
+
+.btn:hover {
+  background-color: #EAAA00 !important;
+}
+
 #vineyard {
   border-radius: 10px;
+}
+
+.datepicker-date-display {
+  background-color: #880e4f;
+}
+
+abbr {
+  color: white !important;
+}
+
+#date-tasting-header {
+  color: white;
+  background-color: #880e4f;
+  text-align: center;
+}
+
+#home-header {
+  font-family: 'Parisienne', cursive;
+  text-align: center;
+}
+
+#home-img {
+  border: 10px dotted black;
+  border-style: double;
+}
+
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-position: center center;
+  opacity: .95;
+  top: 100px;
+  height: 40vh;
+}
+
+#banner-heading { 
+  display: flex;
+  font-family: 'Bebas Neue', sans-serif;
+  word-spacing: 5px;
+  letter-spacing: 5px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background-color: rgba(0,0,0,0.6);
+  height: 60px;
+}
+
+h5 {
+  font-family: 'Bebas Neue', sans-serif;
 }
