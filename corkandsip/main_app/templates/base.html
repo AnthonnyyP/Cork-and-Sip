@@ -14,8 +14,6 @@
   <!--GOOGLE FONTS ABOVE-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" />
-  <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css' %}" />
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,34 +26,34 @@
     <li><a class = "black-text" href="{% url 'index' %}">View All Guests</a></li>
 
 
-    </ul>
-    <ul id="dropdown2" class="dropdown-content">
-      <li><a class = "black-text" href="{% url 'wines_create' %}">Add a Wine</a></li>
-      <li class="divider"></li>
-      <li><a class = "black-text" href="{% url 'wines_index' %}">View All Wines</a></li>
+  </ul>
+  <ul id="dropdown2" class="dropdown-content">
+    <li><a class = "black-text" href="{% url 'wines_create' %}">Add a Wine</a></li>
+    <li class="divider"></li>
+    <li><a class = "black-text" href="{% url 'wines_index' %}">View All Wines</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper pink darken-4">
+      <ul>
+        <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp; Cork & Sip</a></li>
       </ul>
-    <nav>
-      <div class="nav-wrapper pink darken-4">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp; Cork & Sip</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
-          {% if user.is_authenticated %}
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" >Guests<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2" >Wines<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
-            </ul>
-          {% else %}
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
-    <div class="banner">
-      <h2 id = "banner-heading">Welcome to Cork & Sip</h2>
+      <ul class="right">
+        <li><a href="{% url 'about' %}">About</a></li>
+        {% if user.is_authenticated %}
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" >Guests<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown2" >Wines<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          </ul>
+        {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+        {% endif %}
+      </ul>
     </div>
+  </nav>
+  <div class="banner">
+    <h2 id = "banner-heading">Welcome to Cork & Sip</h2>
+  </div>
   </header>
   <main class="container">
     {% block content %}

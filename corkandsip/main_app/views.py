@@ -1,6 +1,3 @@
-import uuid
-import boto3
-import os
 from django.shortcuts import render, redirect
 # CRUD Views
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
