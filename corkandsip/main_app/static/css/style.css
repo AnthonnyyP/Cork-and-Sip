@@ -95,6 +95,12 @@ abbr {
   height: 40vh;
 }
 
+nav .brand-logo {
+  color: white; 
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 3px;
+}
+
 h5 {
   font-family: 'Bebas Neue', sans-serif;
 }
