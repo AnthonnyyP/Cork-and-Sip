@@ -5,7 +5,7 @@
 {% for guest in guests %}
 <div class="card">
   <a href="{% url 'detail' guest.id %}">
-    <div class="card-content">
+    <div style="color: black;" class="card-content">
       <span class="card-title">{{ guest.username }}</span>
       <p>Email: {{ guest.user_Email }}</p>
       <p>Phone Number: {{ guest.user_Phone }}</p>
