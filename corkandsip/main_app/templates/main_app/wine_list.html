@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="card-content valign center">Wine List</h1>
+<h1 class="card-content valign center">Our Collection of Wines</h1>
 
+<div class="row">
 {% for wine in wine_list %}
   <a href="{% url 'wines_detail' wine.id %}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ wine.producer }}</span>
-            <p>Vintage: {{ wine.vintage }}</p>
-            <p>Region: {{ wine.region }}</p>
-        </div>
+    <div class="col s4">
+      <div class="card">
+          <div class="card-content">
+              <span style="color: black;" class="card-title">{{ wine.producer }}</span>
+              <p style="color: black;" >Vintage: {{ wine.vintage }}</p>
+              <p style="color: black;" >Region: {{ wine.region }}</p>
+          </div>
+      </div>
     </div>
   </a>
 {% endfor %}
-
+</div>
 {% endblock %}
