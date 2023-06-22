@@ -21,7 +21,8 @@ form {
 }
 
 label {
-  color: white;
+  color:white !important;
+  background-color: #880e4f;
 }
 
 input { 
