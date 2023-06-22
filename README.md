@@ -53,6 +53,7 @@ Maybe you're a sommelier, maybe you're like "sommel-what? I don't even know what
 #### **_Future Updates_**:
 
 1. The Wine Searcher [API](https://www.wine-searcher.com/trade/ws-api) will be implemented to allow users to query for different wines within the Cork & Sip vineyards collection and to see if they'll be available during the event tasting. 
+2. Image Upload will be implemented for adding a wine, the guest profile, and images will be showcased on the "All Wines" page in addition to their name and description. 
 
 ---
 
@@ -70,6 +71,10 @@ Maybe you're a sommelier, maybe you're like "sommel-what? I don't even know what
 1. [Casa Rondena](https://www.casarondena.com/)
 2. [Route du Chianti by Olivier](https://www.youtube.com/watch?v=qdM4ImpzSXs&ab_channel=OlivierM.)
 3. [Vintage Cellars](https://www.tiktok.com/@vintagecellars/video/7163315135933680938)
-4. [StephDrinksWine](https://www.tiktok.com/@stephdrinkswine)
+4. [Steph Drinks Wine](https://www.tiktok.com/@stephdrinkswine)
 5. [Wine Searcher](https://www.wine-searcher.com/trade/ws-api)
+6. [Django Project](https://docs.djangoproject.com/en/4.2/ref/models/fields/)
+7. [Stack Overflow](https://stackoverflow.com/questions/14365759/datetimefield-without-time)
+8. [Stack Overflow](https://stackoverflow.com/questions/11385607/how-to-model-a-timefield-in-django)
+9. [MaterializeCSS](https://materializecss.com/)
 
