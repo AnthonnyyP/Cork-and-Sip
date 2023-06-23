@@ -59,12 +59,10 @@ Maybe you're a sommelier, maybe you're like "sommel-what? I don't even know what
 
 #### **_Screenshots_**:
 
-### Entity Relationship Diagram
-![Imgur](https://i.imgur.com/wqgBASB.png)
-
-### Wireframe
-![Imgur](https://i.imgur.com/oFHFJ3il.png)
-
+### Final Product
+![Imgur](https://i.imgur.com/Wn69Tfl.png)
+![Imgur](https://i.imgur.com/gmztNr9.png)
+![Imgur](https://i.imgur.com/BHsre92.png)
 ---
 
 #### **_References_**:
