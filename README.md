@@ -30,7 +30,7 @@ Tony Phan:
 ### Getting Started:
 
 1. [Cork & Sip Trello](https://trello.com/b/6QYE9zNE/cork-and-sip)
-2. [Cork & Sip (Deployed)]()
+2. [Cork & Sip (Deployed)](https://corkandsip.fly.dev/)
 ---
 ### Description:
 
